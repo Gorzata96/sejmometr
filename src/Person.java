@@ -4,24 +4,29 @@ import java.util.ArrayList;
  * Created by Gosia on 2016-12-18.
  */
 public class Person {
-    private String firstName;
-    private String lastName;
-    private ArrayList<Integer> cadency = new ArrayList<Integer>();
+    private String name;
+    private String id;
 
-    public Person(/*dane*/) {
-        //stwarzanie posła
-        //lista wydatków
-        //kadencja
+    private ArrayList<Cost> costs = new ArrayList<>();
+
+    public Person(String name, String id) {
+        this.name = name;
+        this.id = id;
     }
 
+
     public float getAllCosts(){
-        //suma wszystkich wydatków
+        float costsSum = 0;
+        for(Cost c: costs)
+            costsSum += c.getCost();
+        return costsSum;
     }
     public float getVoyageCostMax(){
         //znajduje najdroższą wycieczkę zagraniczną
     }
     public float getRepairsValue(){
-        //zwraca sumę wydatków na naprawy
+        float repairsSum = 0;
+
     }
     public int getNumberOfVoyages(){
         //zwraca liczbę podrozy zagranicznych
